@@ -45,7 +45,7 @@ const Home = () => {
     <div className="">
       {/* Header */}
       <header className="bg-amber-700 py-4   ">
-        <div className="mx-auto container flex justify-end">
+        <div className="mx-auto container flex justify-end px-10 lg:px-36">
           <ul className="flex flex-row gap-4 text-white ">
             <li onClick={()=>openMenu(1)} className="block lg:hidden cursor-pointer">เมนู 1</li>
             <li onClick={()=>openMenu(2)} className="block lg:hidden cursor-pointer">เมนู 2</li>
@@ -59,7 +59,7 @@ const Home = () => {
       </header>
 
       {/* Contents  */}
-      <section className={`${menu_1 ? "py-0 " : "py-6"} bg-amber-100 `}>
+      <section className={`${menu_1 ? "py-0 " : "py-6"} bg-amber-100 px-10 lg:px-36 `}>
         <div className="flex flex-row gap-4 mx-auto container    ">
           {/* Left */}
           <div className={ ` ${menu_1 ? "block w-full absolute bg-white  shadow-xl" : "hidden "}   lg:block w-1/6 `}>
@@ -114,7 +114,7 @@ const Home = () => {
               NEW ITEMS
             </h2>
 
-            <div className="flex flex-col lg:flex-row gap-4 justify-center items-center mt-10  mx-10 lg:mx-0">
+            <div className="flex flex-col lg:flex-row gap-4 justify-center items-center mt-10  ">
               <div className="w-full">
                 <div className="px-4 py-4 rounded-md border-2 border-amber-700 hover:bg-amber-200">
                   <img
@@ -212,8 +212,8 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <div className="bg-amber-700 py-4 ">
-        <div className="mx-auto container">
+      <div className="bg-amber-700 py-4  ">
+        <div className="mx-auto container px-10 lg:px-36">
           <p className="text-white text-xl text-center">
             'เบเกอรี่แสนอร่อย สำหรับทุกคนในครบครัว ทุกโอกาศทุกเทศกาล'
           </p>
