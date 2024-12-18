@@ -88,8 +88,8 @@ const Home = () => {
           {/* Rifht */}
           <div className=" w-full lg:w-5/6   lg:mx-0">
             <header className="flex flex-row justify-between items-center">
-              <div className={` ${menu_2 ? "block w-full absolute bg-white mt-24  shadow-xl" : "hidden "}   lg:block w-2/3 `}>
-                <ul className="flex flex-col  lg:flex-row gap-6 lg:gap-3 text-amber-800 text-lg font-semibold">
+              <div className={` ${menu_2 ? "block w-full absolute bg-white mt-48  shadow-xl" : "hidden "}   lg:block w-2/3 `}>
+                <ul className="flex flex-col py-4  lg:flex-row gap-6 lg:gap-3 text-amber-800 text-md lg:text-lg font-semibold">
                   <li className="hover:bg-amber-200 px-4 py-1 rounded-md">
                     หน้าแรก
                   </li>
