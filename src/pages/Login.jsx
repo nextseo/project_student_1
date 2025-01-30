@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { AuthContext } from "../contexts/AuthContext";
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,6 +11,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [role , setRole] = useState("")
+
+  // Systems
+  const { login } = useContext(AuthContext);
 
       // const res = await axios.post(
       //   `${process.env.REACT_APP_API}/employee-login`,
@@ -29,29 +35,57 @@ const Login = () => {
       //   toast.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
       // }
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  
+  //     if (email === "admin" && password === "1234") {
+  //       const role = "employee";
+  //       toast.success("เข้าสู่ระบบสำเร็จ");
+  //       // const { emp_id, emp_fname, emp_lname } = res.data.results[0];
+  //       const data = { emp_id : 1, emp_fname : "admin", emp_lname : "dev" , role };
+  //       login
+  //       // setIsAuthenticated(true);
+  //       // localStorage.setItem("auth_react", JSON.stringify(data));
+  //       // navigate(`/${role}`);
+
+
+
+  //       // navigate(`/${role}`);
+  //     //  setTimeout(() => {
+  //     //   navigate(`/${role}`);
+  //     //  }, 1500);
+  //     } else {
+  //       toast.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     toast.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`/api/employee-login`);
 
     try {
-  
       if (email === "admin" && password === "1234") {
-        const role = "employee";
+        const userData = { emp_id: 1, emp_fname: "admin", emp_lname: "dev", role: "employee" };
         toast.success("เข้าสู่ระบบสำเร็จ");
-        // const { emp_id, emp_fname, emp_lname } = res.data.results[0];
-        const data = { emp_id : 1, emp_fname : "admin", emp_lname : "dev" , role };
-        setIsAuthenticated(true);
-        localStorage.setItem("auth_react", JSON.stringify(data));
-        // navigate(`/${role}`);
-       setTimeout(() => {
-        window.location.reload()
-       }, 1500);
+
+        setTimeout(() => {
+          login(userData); 
+        }, 1500);
+
+        // setTimeout(() => {
+        //   navigate(`/${userData.role}`);
+        // }, 1000);
       } else {
         toast.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
       }
     } catch (error) {
-      console.log(error);
-      toast.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+      console.error(error);
+      toast.error("เกิดข้อผิดพลาด");
     }
   };
 
@@ -59,10 +93,11 @@ const Login = () => {
   //   const authData = localStorage.getItem("auth_react");
   //   if (authData) {
   //     const user = JSON.parse(authData);
-  //     setIsAuthenticated(true);
-  //     navigate(`/${user.role}`);
+  //     console.log({user});
+  //     // setIsAuthenticated(true);
+  //     // navigate(`/${user.role}`);
   //   }
-  // }, [navigate]);
+  // }, [role]);
 
   return (
     <div className="flex justify-center items-center min-h-screen">

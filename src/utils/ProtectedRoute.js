@@ -10,6 +10,8 @@
 
 // export default ProtectedRoute;
 
+// ProtectedRoute.js
+
 import { useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
@@ -21,13 +23,10 @@ const ProtectedRoute = ({ allowedRoles }) => {
     return <Navigate to="/" />;
   }
 
-  // if (!allowedRoles.includes(user.role)) {
-  //   return <Navigate to="/" />;
-  // }
 
 
 
-  if (!user || !allowedRoles.includes(user.role)) {
+  if ( !allowedRoles.includes(user.role)) {
     return <Navigate to="/login" />;
   }
 

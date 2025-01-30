@@ -19,8 +19,17 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  // 🔹 ตรวจสอบ LocalStorage ทุกครั้งที่ user เปลี่ยนแปลง
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("auth_react", JSON.stringify(user));
+    } else {
+      localStorage.removeItem("auth_react");
+    }
+  }, [user]); // ✅ ตรวจสอบการเปลี่ยนแปลงของ `user`
+
   const login = (userData) => {
-    localStorage.setItem("auth_react", JSON.stringify(userData));
+    // localStorage.setItem("auth_react", JSON.stringify(userData));
     setUser(userData);
   };
 
