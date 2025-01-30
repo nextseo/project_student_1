@@ -18,6 +18,16 @@ import CustomerLayout from "./layout/CustomerLayout";
 import EmployeeLayout from "./layout/EmployeeLayout";
 import EmployeeData from "./pages/employee/EmployeeData";
 import { ThemeProvider } from "@material-tailwind/react";
+import EmployeeAdd from "./pages/employee/EmployeeAdd";
+import MemberAdd from "./pages/employee/MemberAdd";
+import MemberData from "./pages/employee/MemberData";
+import Pay from "./pages/home/Pay";
+
+// Username ไม่มีที่ลง
+
+
+// API
+// /employee-add ใช้ไม่ได้
 
 function App() {
   return (
@@ -38,6 +48,7 @@ function App() {
             >
               <Route index element={<Home />} />
               <Route path="contact" element={<Contact />} />
+              <Route path="pay" element={<Pay />} />
             </Route>
 
             {/* Login Route */}
@@ -58,7 +69,10 @@ function App() {
             >
               <Route element={<EmployeeLayout />}>
                 <Route index element={<EmployeePage />} />
-                <Route path="employee_data" element={<EmployeeData />} />
+                <Route path="employee/data" element={<EmployeeData />} />
+                <Route path="employee/add" element={<EmployeeAdd />} />
+                <Route path="member/data" element={<MemberData />} />
+                <Route path="member/add" element={<MemberAdd />} />
                 <Route path="*" element={<Navigate to="/employee" />} />
               </Route>
             </Route>

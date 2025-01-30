@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
 
       {/* Contents  */}
       <section
-        className={`${menu_1 ? "py-0 " : "py-6"} bg-yellow-900/10 px-10 lg:px-36 `}
+        className={`${menu_1 ? "py-0 " : "py-6"} bg-[#fbeee6] px-10 lg:px-36 `}
       >
         <div className="flex flex-row gap-4 mx-auto container    ">
           {/* Left */}
@@ -60,23 +60,23 @@ const Layout = ({ children }) => {
               className=" lg:-mt-16 w-52 hidden lg:block"
             />
 
-            <p className="mt-4 py-2 font-semibold px-4 text-amber-800">
+            <p className="mt-4 py-2 font-semibold px-4 text-[#cd6155]">
               หมวดหมู่สินค้า
             </p>
-            <ul className=" text-amber-800 flex flex-col gap-3">
-              <li className="hover:bg-amber-200 hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
+            <ul className=" text-[#cd6155] flex flex-col gap-3">
+              <li className="hover:bg-[#f6ddcc] hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
                 สินค้าใหม่
               </li>
-              <li className="hover:bg-amber-200 hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
+              <li className="hover:bg-[#f6ddcc] hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
                 เบเกอรี่ ( Bakery ){" "}
               </li>
-              <li className="hover:bg-amber-200 hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
+              <li className="hover:bg-[#f6ddcc] hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
                 เทศกาลวันวาเลนไทน์
               </li>
-              <li className="hover:bg-amber-200 hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
+              <li className="hover:bg-[#f6ddcc] hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
                 เบเกอรี่ ( Bakery ){" "}
               </li>
-              <li className="hover:bg-amber-200 hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
+              <li className="hover:bg-[#f6ddcc] hover:rounded-lg py-2 hover:font-semibold px-4 cursor-pointer">
                 เทศกาลปีใหม่{" "}
               </li>
             </ul>
@@ -91,17 +91,17 @@ const Layout = ({ children }) => {
                     : "hidden "
                 }   lg:block w-2/3 `}
               >
-                <ul className="flex flex-col py-4  lg:flex-row gap-6 lg:gap-0 text-amber-800 text-md  font-semibold">
-                  <li className={ ` ${location.pathname === "/" ? "bg-amber-200 border-2 border-amber-800" : "hover:bg-amber-200"} px-4 py-1 rounded-md`}>
+                <ul className="flex flex-col py-4  lg:flex-row gap-6 lg:gap-0 text-[#cd6155] text-md  font-semibold">
+                  <li className={ ` ${location.pathname === "/" ? "bg-[#f6ddcc] border-2 border-amber-800" : "hover:bg-[#f6ddcc]"} px-4 py-1 rounded-md`}>
                   <Link onClick={()=>setMenu_2(false)} to="/">หน้าแรก </Link>
                   </li>
-                  <li className="hover:bg-amber-200 px-4 py-1 rounded-md">
+                  <li className="hover:bg-[#f6ddcc] px-4 py-1 rounded-md">
                     หมวดหมู่สินค้า
                   </li>
-                  <li className="hover:bg-amber-200 px-4 py-1 rounded-md">
-                    แจ้งชำระเงิน
+                  <li className={ ` ${location.pathname === "/pay" ? "bg-[#f6ddcc] border-2 border-amber-800" : "hover:bg-[#f6ddcc]"} px-4 py-1 rounded-md`}>
+                    <Link onClick={()=>setMenu_2(false)} to="/pay">แจ้งชำระเงิน</Link>
                   </li>
-                  <li className={ ` ${location.pathname === "/contact" ? "bg-amber-200 border-2 border-amber-800" : "hover:bg-amber-200"} px-4 py-1 rounded-md`}>
+                  <li className={ ` ${location.pathname === "/contact" ? "bg-[#f6ddcc] border-2 border-amber-800" : "hover:bg-[#f6ddcc]"} px-4 py-1 rounded-md`}>
                     <Link onClick={()=>setMenu_2(false)} to="/contact">ติดต่อเรา</Link>
                   </li>
                 </ul>
@@ -119,7 +119,7 @@ const Layout = ({ children }) => {
       </section>
 
       {/* Footer */}
-      <div className="bg-yellow-900 py-4  ">
+      <div className="bg-[#cd6155] py-4  ">
         <div className="mx-auto container px-10 lg:px-36s">
           <p className="text-white text-xl text-center">
             'เบเกอรี่แสนอร่อย สำหรับทุกคนในครบครัว ทุกโอกาศทุกเทศกาล'

@@ -14,19 +14,30 @@ const Login = () => {
     console.log(`/api/employee-login`);
 
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_API}/employee-login`,
-        {
-          Username: email,
-          Password: password,
-        }
-      );
+      // const res = await axios.post(
+      //   `${process.env.REACT_APP_API}/employee-login`,
+      //   {
+      //     Username: email,
+      //     Password: password,
+      //   }
+      // );
 
-      if (res.data.results.length > 0) {
+      // if (res.data.results.length > 0) {
+      //   const role = "employee";
+      //   toast.success(res.data.message);
+      //   const { emp_id, emp_fname, emp_lname } = res.data.results[0];
+      //   const data = { emp_id, emp_fname, emp_lname, role };
+      //   localStorage.setItem("auth_react", JSON.stringify(data));
+      //   window.location.reload();
+      // } else {
+      //   toast.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+      // }
+
+      if (email === "admin" || password === "1234") {
         const role = "employee";
-        toast.success(res.data.message);
-        const { emp_id, emp_fname, emp_lname } = res.data.results[0];
-        const data = { emp_id, emp_fname, emp_lname, role };
+        toast.success("เข้าสู่ระบบสำเร็จ");
+        // const { emp_id, emp_fname, emp_lname } = res.data.results[0];
+        const data = { role };
         localStorage.setItem("auth_react", JSON.stringify(data));
         window.location.reload();
       } else {

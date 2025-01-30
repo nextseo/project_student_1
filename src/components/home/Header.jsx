@@ -8,7 +8,7 @@ const Header = ({openMenu}) => {
   return (
     <div>
       {/* Header */}
-      <header className="bg-yellow-900 py-4   ">
+      <header className="bg-[#cd6155] py-4   ">
         <div className="mx-auto container flex justify-end px-10 lg:px-36">
           <ul className="flex flex-row gap-4 text-white ">
             <li

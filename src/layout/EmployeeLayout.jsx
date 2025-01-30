@@ -10,8 +10,8 @@ const EmployeeLayout = () => {
 
   const links = [
     { path: "/employee", label: "Dashboard" },
-    { path: "/employee/employee_data", label: "ข้อมูลพนักงาน" },    { path: "/employee/customers", label: "ข้อมูลลูกค้า" },
-    // { path: "/employee/reports", label: "รายงาน" },
+    { path: "/employee/employee/data", label: "ข้อมูลพนักงาน" },    
+    { path: "/employee/member/data", label: "ข้อมูลสมาชิก" },
   ];
 
   useEffect(() => {
