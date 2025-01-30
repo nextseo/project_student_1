@@ -11,7 +11,7 @@ const Contact = () => {
               className="bg-gray-800 rounded-full p-2 text-white"
               size={40}
             />{" "}
-            <p className="bg-amber-700 bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">097-183-2104</p>
+            <p className="bg-[#f1c3a3]  bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">097-183-2104</p>
           </li>
 
           <li className="flex items-center gap-2">
@@ -19,7 +19,7 @@ const Contact = () => {
               className="bg-blue-700 rounded-full p-2 text-white"
               size={40}
             />{" "}
-            <p className="bg-amber-700 bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">Nanabakery.shop</p>
+            <p className="bg-[#f1c3a3] bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">Nanabakery.shop</p>
           </li>
 
           <li className="flex items-center gap-2">
@@ -27,7 +27,7 @@ const Contact = () => {
               className="bg-green-600 rounded-full p-2 text-white"
               size={40}
             />{" "}
-            <p className="bg-amber-700 bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">@Nanabakery.shop</p>
+            <p className="bg-[#f1c3a3] bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">@Nanabakery.shop</p>
           </li>
 
           <li className="flex items-center gap-2">
@@ -35,7 +35,7 @@ const Contact = () => {
               className="bg-red-600 rounded-full p-2 text-white"
               size={40}
             />{" "}
-            <p className="bg-amber-700 bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">YouTube.com/Nanabakery-shop</p>
+            <p className="bg-[#f1c3a3] bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">YouTube.com/Nanabakery-shop</p>
           </li>
 
           <li className="flex items-center gap-2">
@@ -43,7 +43,7 @@ const Contact = () => {
               className="bg-black rounded-full p-2 text-white"
               size={40}
             />{" "}
-            <p className="bg-amber-700 bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">  ที่อยู่: นครขื่อนขันธ์ 3/1 บางพึ่ง อ.พระประแดง สมุทรปราการ 10130 </p>
+            <p className="bg-[#f1c3a3] bg-opacity-50 px-6 py-2 rounded-md w-full lg:w-96">  ที่อยู่: นครขื่อนขันธ์ 3/1 บางพึ่ง อ.พระประแดง สมุทรปราการ 10130 </p>
           </li>
 
       
