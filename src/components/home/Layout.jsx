@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
 
       {/* Contents  */}
       <section
-        className={`${menu_1 ? "py-0 " : "py-6"} bg-amber-100 px-10 lg:px-36 `}
+        className={`${menu_1 ? "py-0 " : "py-6"} bg-yellow-900/10 px-10 lg:px-36 `}
       >
         <div className="flex flex-row gap-4 mx-auto container    ">
           {/* Left */}
@@ -119,7 +119,7 @@ const Layout = ({ children }) => {
       </section>
 
       {/* Footer */}
-      <div className="bg-amber-700 py-4  ">
+      <div className="bg-yellow-900 py-4  ">
         <div className="mx-auto container px-10 lg:px-36s">
           <p className="text-white text-xl text-center">
             'เบเกอรี่แสนอร่อย สำหรับทุกคนในครบครัว ทุกโอกาศทุกเทศกาล'

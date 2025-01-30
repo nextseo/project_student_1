@@ -1,8 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
+  const location = useLocation();
+
+
+  const menuAdmin_1 = [
+    {id:0, name : "หมวดหมู่", to:"/admin/categorys"},
+    {id:1, name : "สินค้า", to:"/admin/products"},
+    {id:2, name : "วัติถุดิบ", to:"/"},
+    {id:3, name : "เบิกวัติถุดิบ", to:"/"},
+    {id:4, name : "สต๊อกสินค้า", to:"/"},
+  ]
+
+  const menuAdmin_2 = [
+    {id:0, name : 'รายงานยอดขาย', to: "/"},
+    {id:0, name : 'รายงานข้อมูลสินค้า', to: "/"},
+    {id:0, name : 'รายงานยอดขาย', to: "/"},
+  ]
   return (
+
+
     <div>
       {/* Overlay for mobile */}
       {isOpen && (
@@ -19,27 +37,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         } lg:translate-x-0 transition-transform duration-300 ease-in-out`}
       >
         <nav>
-          <ul>
-            <li className="bg-gradient-to-r from-indigo-400 to-purple-600 text-white px-4 rounded-md">
-              <Link to="/admin" className="block py-2" onClick={toggleSidebar}>
-                Menu 1
-              </Link>
-            </li>
-            <li className="px-4">
-              <Link
-                to="/employee"
-                className="block py-2"
-                onClick={toggleSidebar}
-              >
-                Menu 2
-              </Link>
-            </li>
-            <li className="px-4">
-              <Link to="/user" className="block py-2" onClick={toggleSidebar}>
-                Menu 3
-              </Link>
-            </li>
+          <ul className="flex flex-col gap-3">
+            {menuAdmin_1.map((item)=> (
+              <li key={item.id} className={`${location.pathname == item.to ? "bg-red-500 text-white" : "text-black"} px-4 py-1 rounded-md  `}>
+                <Link to={item.to}>{item.name} </Link>
+              </li>
+            ))}
           </ul>
+        
         </nav>
       </div>
     </div>

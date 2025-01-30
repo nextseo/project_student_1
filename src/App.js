@@ -1,78 +1,94 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import RedirectIfAuthenticated from "./utils/RedirectIfAuthenticated";
 import Login from "./pages/Login";
-import Admin from "./pages/Admin";
-import Employee from "./pages/Employee";
-import User from "./pages/User";
+import EmployeePage from "./pages/employee/Page";
+import Customer from "./pages/customer/Page";
+import User from "./pages/user/Page";
+
 import Home from "./pages/Home";
 // Toast
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Header from "./components/home/Header";
-import { ContainerWithChildren } from "postcss/lib/container";
 import Contact from "./pages/home/Contact";
 import Layout from "./components/home/Layout";
+import CustomerLayout from "./layout/CustomerLayout";
+import EmployeeLayout from "./layout/EmployeeLayout";
+import EmployeeData from "./pages/employee/EmployeeData";
+import { ThemeProvider } from "@material-tailwind/react";
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <ToastContainer autoClose={2000} theme="colored" />
-        <Routes>
-          {/* ป้องกันผู้ใช้ที่ล็อกอินแล้วเข้าถึงหน้า / และ /login */}
-          <Route
-            path="/"
-            element={
-              <RedirectIfAuthenticated>
-                <Layout />
-              </RedirectIfAuthenticated>
-            }
-          >
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-          </Route>
+    <BrowserRouter>
+      <ThemeProvider>
+        <AuthProvider>
+          <ToastContainer autoClose={2000} theme="colored" />
 
-          <Route
-            path="/login"
-            element={
-              <RedirectIfAuthenticated>
-                <Login />
-              </RedirectIfAuthenticated>
-            }
-          />
+          <Routes>
+            {/* Public Routes */}
+            <Route
+              path="/"
+              element={
+                <RedirectIfAuthenticated>
+                  <Layout />
+                </RedirectIfAuthenticated>
+              }
+            >
+              <Route index element={<Home />} />
+              <Route path="contact" element={<Contact />} />
+            </Route>
 
-          
-          {/* ป้องกันการเข้าถึงหน้าตามสิทธิ์ */}
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute allowedRoles={["admin"]}>
-                <Admin />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/employee"
-            element={
-              <ProtectedRoute allowedRoles={["employee"]}>
-                <Employee />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/user"
-            element={
-              <ProtectedRoute allowedRoles={["user"]}>
-                <User />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+            {/* Login Route */}
+            <Route
+              path="/login"
+              element={
+                <RedirectIfAuthenticated>
+                  <Login />
+                </RedirectIfAuthenticated>
+              }
+            />
+
+            {/* Employee Dashboard */}
+
+            <Route
+              path="/employee"
+              element={<ProtectedRoute allowedRoles={["employee"]} />}
+            >
+              <Route element={<EmployeeLayout />}>
+                <Route index element={<EmployeePage />} />
+                <Route path="employee_data" element={<EmployeeData />} />
+                <Route path="*" element={<Navigate to="/employee" />} />
+              </Route>
+            </Route>
+
+            {/* Customer Dashboard */}
+            <Route
+              path="/customer"
+              element={<ProtectedRoute allowedRoles={["customer"]} />}
+            >
+              <Route element={<CustomerLayout />}>
+                <Route index element={<Customer />} />
+                <Route path="*" element={<Navigate to="/customer" />} />
+              </Route>
+            </Route>
+
+            {/* User Dashboard */}
+            <Route
+              path="/user"
+              element={<ProtectedRoute allowedRoles={["user"]} />}
+            >
+              <Route index element={<User />} />
+              <Route path="*" element={<Navigate to="/user" />} />
+            </Route>
+
+            {/* Redirect for Undefined Routes */}
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </AuthProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
