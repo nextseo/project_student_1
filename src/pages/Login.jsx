@@ -43,7 +43,9 @@ const Login = () => {
         setIsAuthenticated(true);
         localStorage.setItem("auth_react", JSON.stringify(data));
         // navigate(`/${role}`);
+       setTimeout(() => {
         window.location.reload()
+       }, 1500);
       } else {
         toast.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
       }
