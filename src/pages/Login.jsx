@@ -33,7 +33,7 @@ const Login = () => {
       //   toast.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
       // }
 
-      if (email === "admin" || password === "1234") {
+      if (email === "admin" && password === "1234") {
         const role = "employee";
         toast.success("เข้าสู่ระบบสำเร็จ");
         // const { emp_id, emp_fname, emp_lname } = res.data.results[0];
