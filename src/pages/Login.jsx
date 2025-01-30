@@ -52,7 +52,7 @@ const Login = () => {
   useEffect(() => {
     const authData = localStorage.getItem("auth_react");
     if (authData) {
-      navigate("/");
+      //navigate("/");
     }
   }, [navigate]);
 
