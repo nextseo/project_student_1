@@ -37,7 +37,7 @@ const Login = () => {
         const role = "employee";
         toast.success("เข้าสู่ระบบสำเร็จ");
         // const { emp_id, emp_fname, emp_lname } = res.data.results[0];
-        const data = { role };
+        const data = { emp_id : 1, emp_fname : "admin", emp_lname : "dev" , role };
         localStorage.setItem("auth_react", JSON.stringify(data));
         window.location.reload();
       } else {
