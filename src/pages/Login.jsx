@@ -72,14 +72,10 @@ const Login = () => {
       if (email === "admin" && password === "1234") {
         const userData = { emp_id: 1, emp_fname: "admin", emp_lname: "dev", role: "employee" };
         toast.success("เข้าสู่ระบบสำเร็จ");
+        localStorage.setItem("auth_react", JSON.stringify(userData));
 
-        setTimeout(() => {
-          login(userData); 
-        }, 1500);
 
-        // setTimeout(() => {
-        //   navigate(`/${userData.role}`);
-        // }, 1000);
+  
       } else {
         toast.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
       }
